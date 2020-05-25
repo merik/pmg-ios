@@ -149,7 +149,7 @@ class MovieCollectionView: UICollectionView, UICollectionViewDelegate, UICollect
                     marginRight: MovieCollectionViewStyle.marginRight + safeArea.right,
                     margin: MovieCollectionViewStyle.margin)
         
-        let height = cellWidth * 16 / 9
+        let height = cellWidth * 4 / 3
         return CGSize(width: cellWidth, height: height)
     }
     

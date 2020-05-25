@@ -47,7 +47,6 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()
-        refresh()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,7 +69,7 @@ class DashboardViewController: UIViewController {
         let refresher = UIRefreshControl()
         refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.refreshControl = refresher
-        
+        refresh()
     }
     
     @objc func refresh() {
@@ -78,7 +77,7 @@ class DashboardViewController: UIViewController {
     }
     
     private func setupRx() {
-        viewModel.output.isLoading.asObservable().skip(1)
+        viewModel.output.isLoading.asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[unowned self] loading in
                 if loading {

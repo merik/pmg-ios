@@ -21,7 +21,7 @@ extension PMG {
         case quietLight = 0xcfdde1ff
         case quietLighter = 0xe7eef0ff
         case quietLightest = 0xf5f8f9ff
-        case primary = 0x14a8caff
+        case primary = 0x222831ff
         case primaryDark = 0x0a5465ff
         case primaryDarker = 0x06323dff
         case primaryLight = 0x8ad4e5ff

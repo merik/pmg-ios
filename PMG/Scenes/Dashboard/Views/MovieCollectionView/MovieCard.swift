@@ -59,20 +59,22 @@ class MovieCard: UIView {
         imageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        imageView.image = UIImage(named: "space")
         
         // Movie title
         let titleLabel = UILabel()
         self.movieTitleLabel = titleLabel
-        titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        titleLabel.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         titleLabel.text = ""
         titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor(pmg: .white)
+        titleLabel.numberOfLines = 0
         
         contentView.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(5)
             make.right.equalToSuperview().offset(-5)
-            make.height.equalTo(20)
             make.top.equalToSuperview().offset(5)
         }
        
@@ -80,9 +82,10 @@ class MovieCard: UIView {
    
         let directorLabel = UILabel()
         self.directorLabel = directorLabel
-        directorLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        directorLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         directorLabel.text = ""
         directorLabel.textAlignment = .center
+        directorLabel.textColor = UIColor(pmg: .white)
         
         contentView.addSubview(directorLabel)
         
@@ -109,6 +112,7 @@ class MovieCard: UIView {
     
     func setInfo(movie: Movie) {
         self.movieTitleLabel.text = movie.title
+        self.movieTitleLabel.sizeToFit()
         self.directorLabel.text = movie.director
        
     }

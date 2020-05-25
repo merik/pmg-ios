@@ -18,6 +18,7 @@ class PMGNavigationController: UINavigationController {
         super.init(rootViewController: rootViewController)
         self.navigationBar.barTintColor = UIColor(pmg: .primary)
         self.navigationBar.tintColor = UIColor(pmg: .white)
+        self.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(pmg: .white)]
         self.navigationBar.isTranslucent = false
     }
 
