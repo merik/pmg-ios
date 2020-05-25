@@ -1,0 +1,6 @@
+framework module Pods_PMGTests {
+  umbrella header "Pods-PMGTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
