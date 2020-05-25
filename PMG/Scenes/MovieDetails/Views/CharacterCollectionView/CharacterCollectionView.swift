@@ -31,6 +31,7 @@ struct CharacterCollectionViewStyle {
 class CharacterCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private let cellName = CharacterCollectionViewCell.reuseIdentifierString
+    private let headerName = CharacterCollectionViewHeader.reuseIdentifierString
     
     private var containerSize: CGSize = .zero {
         didSet {
@@ -79,6 +80,7 @@ class CharacterCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         let layout = PMGCollectionViewLayout()
         layout.scrollDirection = .vertical
         self.collectionViewLayout = layout
+        layout.sectionHeadersPinToVisibleBounds = true
         
         self.isPagingEnabled = false
         self.showsHorizontalScrollIndicator = false
@@ -96,6 +98,7 @@ class CharacterCollectionView: UICollectionView, UICollectionViewDelegate, UICol
     }
     
     private func initCollectionView(with containerSize: CGSize) {
+         self.register(CharacterCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerName)
         self.register(CharacterCollectionViewCell.self, forCellWithReuseIdentifier: cellName)
         self.dataSource = self
         self.delegate = self
@@ -159,11 +162,26 @@ class CharacterCollectionView: UICollectionView, UICollectionViewDelegate, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.zero
+        
+        let width = collectionView.bounds.size.width
+        return CGSize(width: width, height: 40)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            if let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerName, for: indexPath) as? CharacterCollectionViewHeader {
+                headerView.title = "Characters"
+                return headerView
+            }
+        default: ()
+            
+        }
+        return UICollectionReusableView()
     }
     
 }

@@ -51,23 +51,33 @@ class MovieDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.collectionViewLayout.invalidateLayout()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.isTranslucent = false
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(movieDetailCard)
-        
         view.addSubview(collectionView)
         
         movieDetailCard.snp.makeConstraints {(make) in
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(230)
+            make.height.equalTo(270)
         }
         
         collectionView.snp.makeConstraints { (make) in
             make.left.right.bottom.equalToSuperview()
-            make.top.equalTo(movieDetailCard.snp.bottom)
+            make.top.equalTo(movieDetailCard.snp.bottom).offset(1)
         }
         
         setLeftButtons(["header-icon-back"], animated: false)

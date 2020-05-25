@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class Movie {
-    
+    // Todo: Sort movies by releaseDate
     var episodeId = 0
     var title = ""
     var director = ""

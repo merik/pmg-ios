@@ -59,7 +59,6 @@ class MovieCard: UIView {
         imageView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        imageView.image = UIImage(named: "space")
         
         // Movie title
         let titleLabel = UILabel()
@@ -114,6 +113,7 @@ class MovieCard: UIView {
         self.movieTitleLabel.text = movie.title
         self.movieTitleLabel.sizeToFit()
         self.directorLabel.text = movie.director
+        self.moviePosterImageView.image = UIImage(named: "space")
        
     }
     

@@ -35,12 +35,12 @@ class MovieDetailCard: UIView {
     private func configure() {
         translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        clipsToBounds = false
-        backgroundColor = UIColor.white
+        clipsToBounds = true
+        backgroundColor = UIColor(pmg: .primary)
         
         addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
-            make.edges.equalTo(0)
+            make.edges.equalToSuperview()
         }
         
         let imageView = UIImageView()
@@ -51,7 +51,7 @@ class MovieDetailCard: UIView {
         contentView.addSubview(imageView)
         imageView.snp.makeConstraints { (make) in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(100)
+            make.height.equalTo(200)
         }
         
         // Movie title
@@ -59,7 +59,8 @@ class MovieDetailCard: UIView {
         self.movieTitleLabel = titleLabel
         titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         titleLabel.text = ""
-        titleLabel.textAlignment = .center
+        titleLabel.textAlignment = .left
+        titleLabel.textColor = UIColor(pmg: .white)
         
         contentView.addSubview(titleLabel)
         
@@ -77,7 +78,8 @@ class MovieDetailCard: UIView {
         openingCrawlLabel.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         openingCrawlLabel.text = ""
         openingCrawlLabel.textAlignment = .left
-        openingCrawlLabel.numberOfLines = 3
+        openingCrawlLabel.numberOfLines = 5
+        openingCrawlLabel.textColor = UIColor(pmg: .white)
              
         contentView.addSubview(openingCrawlLabel)
              
@@ -85,41 +87,60 @@ class MovieDetailCard: UIView {
             make.left.equalToSuperview().offset(5)
             make.right.equalToSuperview().offset(-5)
             make.height.equalTo(66)
-            make.top.equalTo(imageView.snp.bottom).offset(5)
+            make.bottom.equalTo(titleLabel.snp.top)
         }
              
         // Director
-   
+        
         let directorLabel = UILabel()
         self.directorLabel = directorLabel
-        directorLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        directorLabel.font = UIFont.systemFont(ofSize: 10, weight: .light)
         directorLabel.text = ""
         directorLabel.textAlignment = .left
+        directorLabel.textColor = UIColor(pmg: .white)
         
         contentView.addSubview(directorLabel)
         
         directorLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(5)
             make.right.equalToSuperview().offset(-5)
-            make.height.equalTo(22)
-            make.top.equalTo(openingCrawlLabel.snp.bottom).offset(5)
+            make.height.equalTo(20)
+            make.top.equalTo(imageView.snp.bottom)
         }
         
         // Producer
         
         let producerLabel = UILabel()
         self.producerLabel = producerLabel
-        producerLabel.font = UIFont.systemFont(ofSize: 13, weight: .light)
+        producerLabel.font = UIFont.systemFont(ofSize: 10, weight: .light)
         producerLabel.text = ""
         producerLabel.textAlignment = .left
+        producerLabel.textColor = UIColor(pmg: .white)
         
         contentView.addSubview(producerLabel)
         
         producerLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(5)
             make.right.equalToSuperview().offset(-5)
-            make.height.equalTo(22)
-            make.top.equalTo(directorLabel.snp.bottom).offset(5)
+            make.height.equalTo(20)
+            make.top.equalTo(directorLabel.snp.bottom)
+        }
+        
+        // release date
+        let releaseDateLabel = UILabel()
+        self.releaseDateLabel = releaseDateLabel
+        releaseDateLabel.font = UIFont.systemFont(ofSize: 10, weight: .light)
+        releaseDateLabel.text = ""
+        releaseDateLabel.textAlignment = .left
+        releaseDateLabel.textColor = UIColor(pmg: .white)
+        
+        contentView.addSubview(releaseDateLabel)
+        
+        releaseDateLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
+            make.height.equalTo(20)
+            make.top.equalTo(producerLabel.snp.bottom)
         }
         
         layoutSubviews()
@@ -134,10 +155,12 @@ class MovieDetailCard: UIView {
     }
     
     func setMovie(_ movie: Movie) {
-        self.movieTitleLabel.text = movie.title
+        //self.movieTitleLabel.text = movie.title
         self.directorLabel.text = "Director: \(movie.director)"
         self.openingCrawlLabel.text = movie.openingCrawl
         self.producerLabel.text = "Producer: \(movie.producer)"
+        self.moviePosterImageView.image = UIImage(named: "space")
+        self.releaseDateLabel.text = "Release date: \(movie.releaseDate)"
     }
     
 }

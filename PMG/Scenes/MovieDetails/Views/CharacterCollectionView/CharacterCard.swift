@@ -92,6 +92,7 @@ class CharacterCard: UIView {
     
     func setCharacter(_ character: MovieCharacter) {
         self.nameLabel.text = character.name
+        self.imageView.image = UIImage(named: "character")
     }
     
 }
