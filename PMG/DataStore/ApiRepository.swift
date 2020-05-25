@@ -69,6 +69,7 @@ class ApiRepository: BaseRepository {
                                     }
                                 }
                             }
+                            movies.sort(by: >)
                             observer.onNext(movies)
                             observer.onCompleted()
                             

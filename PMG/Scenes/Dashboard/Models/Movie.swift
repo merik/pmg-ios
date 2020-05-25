@@ -9,7 +9,31 @@
 import Foundation
 import SwiftyJSON
 
-class Movie {
+class Movie: Comparable {
+    static func < (lhs: Movie, rhs: Movie) -> Bool {
+        guard let lhsDate = lhs.movieDate else {
+            return true
+        }
+        
+        guard let rhsDate = rhs.movieDate else {
+            return false
+        }
+        
+        return lhsDate < rhsDate
+    }
+    
+    static func == (lhs: Movie, rhs: Movie) -> Bool {
+        guard let lhsDate = lhs.movieDate else {
+            return false
+        }
+        
+        guard let rhsDate = rhs.movieDate else {
+            return false
+        }
+        
+        return Calendar.current.isDate(lhsDate, inSameDayAs: rhsDate)
+    }
+    
     // Todo: Sort movies by releaseDate
     var episodeId = 0
     var title = ""
@@ -36,5 +60,11 @@ class Movie {
                 self.characters.append(character)
             }
         }
+    }
+    
+    var movieDate: Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        return dateFormatter.date(from: self.releaseDate)
     }
 }
