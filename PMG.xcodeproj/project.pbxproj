@@ -13,13 +13,15 @@
 		037310AC247B78AB0010C0F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037310AB247B78AB0010C0F2 /* SceneDelegate.swift */; };
 		037310B3247B78AC0010C0F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037310B2247B78AC0010C0F2 /* Assets.xcassets */; };
 		037310B6247B78AC0010C0F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037310B4247B78AC0010C0F2 /* LaunchScreen.storyboard */; };
-		037310C1247B78AC0010C0F2 /* PMGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037310C0247B78AC0010C0F2 /* PMGTests.swift */; };
+		037310C1247B78AC0010C0F2 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037310C0247B78AC0010C0F2 /* ApiTests.swift */; };
 		037310CC247B78AC0010C0F2 /* PMGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037310CB247B78AC0010C0F2 /* PMGUITests.swift */; };
 		037310DD247B795B0010C0F2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037310DC247B795B0010C0F2 /* Movie.swift */; };
 		038D937D247CB14500ECC95D /* MovieCharactersRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D937C247CB14500ECC95D /* MovieCharactersRecord.swift */; };
 		038D937F247CB9AA00ECC95D /* JsonParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D937E247CB9AA00ECC95D /* JsonParsingTests.swift */; };
 		038D9382247CBB6B00ECC95D /* Character.json in Resources */ = {isa = PBXBuildFile; fileRef = 038D9381247CBB6B00ECC95D /* Character.json */; };
 		038D9384247CBC4000ECC95D /* Movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 038D9383247CBC4000ECC95D /* Movie.json */; };
+		038D9388247CC94600ECC95D /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 038D9387247CC94600ECC95D /* Movies.json */; };
+		038D938A247CCA6100ECC95D /* PMGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D9389247CCA6100ECC95D /* PMGTests.swift */; };
 		03CC163C247B7AF2002CF0EB /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC163B247B7AF2002CF0EB /* ApiEndpoint.swift */; };
 		03CC163E247B7CFC002CF0EB /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC163D247B7CFC002CF0EB /* ApiRepository.swift */; };
 		03CC1640247B7D41002CF0EB /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC163F247B7D41002CF0EB /* BaseRepository.swift */; };
@@ -79,7 +81,7 @@
 		037310B5247B78AC0010C0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		037310B7247B78AC0010C0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037310BC247B78AC0010C0F2 /* PMGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		037310C0247B78AC0010C0F2 /* PMGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMGTests.swift; sourceTree = "<group>"; };
+		037310C0247B78AC0010C0F2 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
 		037310C2247B78AC0010C0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037310C7247B78AC0010C0F2 /* PMGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		037310CB247B78AC0010C0F2 /* PMGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMGUITests.swift; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 		038D937E247CB9AA00ECC95D /* JsonParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsingTests.swift; sourceTree = "<group>"; };
 		038D9381247CBB6B00ECC95D /* Character.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Character.json; sourceTree = "<group>"; };
 		038D9383247CBC4000ECC95D /* Movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movie.json; sourceTree = "<group>"; };
+		038D9387247CC94600ECC95D /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
+		038D9389247CCA6100ECC95D /* PMGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMGTests.swift; sourceTree = "<group>"; };
 		03CC163B247B7AF2002CF0EB /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		03CC163D247B7CFC002CF0EB /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 		03CC163F247B7D41002CF0EB /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
@@ -216,9 +220,10 @@
 			isa = PBXGroup;
 			children = (
 				038D9380247CBB4900ECC95D /* TestData */,
-				037310C0247B78AC0010C0F2 /* PMGTests.swift */,
+				037310C0247B78AC0010C0F2 /* ApiTests.swift */,
 				037310C2247B78AC0010C0F2 /* Info.plist */,
 				038D937E247CB9AA00ECC95D /* JsonParsingTests.swift */,
+				038D9389247CCA6100ECC95D /* PMGTests.swift */,
 			);
 			path = PMGTests;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 			children = (
 				038D9381247CBB6B00ECC95D /* Character.json */,
 				038D9383247CBC4000ECC95D /* Movie.json */,
+				038D9387247CC94600ECC95D /* Movies.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 			files = (
 				038D9384247CBC4000ECC95D /* Movie.json in Resources */,
 				038D9382247CBB6B00ECC95D /* Character.json in Resources */,
+				038D9388247CC94600ECC95D /* Movies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,8 +671,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038D938A247CCA6100ECC95D /* PMGTests.swift in Sources */,
 				038D937F247CB9AA00ECC95D /* JsonParsingTests.swift in Sources */,
-				037310C1247B78AC0010C0F2 /* PMGTests.swift in Sources */,
+				037310C1247B78AC0010C0F2 /* ApiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
