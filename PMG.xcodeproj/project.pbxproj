@@ -19,6 +19,9 @@
 		037310CC247B78AC0010C0F2 /* PMGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037310CB247B78AC0010C0F2 /* PMGUITests.swift */; };
 		037310DD247B795B0010C0F2 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037310DC247B795B0010C0F2 /* Movie.swift */; };
 		038D937D247CB14500ECC95D /* MovieCharactersRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D937C247CB14500ECC95D /* MovieCharactersRecord.swift */; };
+		038D937F247CB9AA00ECC95D /* JsonParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038D937E247CB9AA00ECC95D /* JsonParsingTests.swift */; };
+		038D9382247CBB6B00ECC95D /* Character.json in Resources */ = {isa = PBXBuildFile; fileRef = 038D9381247CBB6B00ECC95D /* Character.json */; };
+		038D9384247CBC4000ECC95D /* Movie.json in Resources */ = {isa = PBXBuildFile; fileRef = 038D9383247CBC4000ECC95D /* Movie.json */; };
 		03CC163C247B7AF2002CF0EB /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC163B247B7AF2002CF0EB /* ApiEndpoint.swift */; };
 		03CC163E247B7CFC002CF0EB /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC163D247B7CFC002CF0EB /* ApiRepository.swift */; };
 		03CC1640247B7D41002CF0EB /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CC163F247B7D41002CF0EB /* BaseRepository.swift */; };
@@ -87,6 +90,9 @@
 		037310CD247B78AC0010C0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037310DC247B795B0010C0F2 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		038D937C247CB14500ECC95D /* MovieCharactersRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCharactersRecord.swift; sourceTree = "<group>"; };
+		038D937E247CB9AA00ECC95D /* JsonParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParsingTests.swift; sourceTree = "<group>"; };
+		038D9381247CBB6B00ECC95D /* Character.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Character.json; sourceTree = "<group>"; };
+		038D9383247CBC4000ECC95D /* Movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movie.json; sourceTree = "<group>"; };
 		03CC163B247B7AF2002CF0EB /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		03CC163D247B7CFC002CF0EB /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 		03CC163F247B7D41002CF0EB /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
@@ -215,8 +221,10 @@
 		037310BF247B78AC0010C0F2 /* PMGTests */ = {
 			isa = PBXGroup;
 			children = (
+				038D9380247CBB4900ECC95D /* TestData */,
 				037310C0247B78AC0010C0F2 /* PMGTests.swift */,
 				037310C2247B78AC0010C0F2 /* Info.plist */,
+				038D937E247CB9AA00ECC95D /* JsonParsingTests.swift */,
 			);
 			path = PMGTests;
 			sourceTree = "<group>";
@@ -277,6 +285,15 @@
 				03CC1648247B89F3002CF0EB /* MovieDataManager.swift */,
 			);
 			path = DataStore;
+			sourceTree = "<group>";
+		};
+		038D9380247CBB4900ECC95D /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				038D9381247CBB6B00ECC95D /* Character.json */,
+				038D9383247CBC4000ECC95D /* Movie.json */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 		03CC1643247B8943002CF0EB /* MovieCollectionView */ = {
@@ -492,6 +509,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038D9384247CBC4000ECC95D /* Movie.json in Resources */,
+				038D9382247CBB6B00ECC95D /* Character.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +672,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038D937F247CB9AA00ECC95D /* JsonParsingTests.swift in Sources */,
 				037310C1247B78AC0010C0F2 /* PMGTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
