@@ -11,7 +11,8 @@ target 'PMG' do
   pod 'RxCocoa', '5.0.0'
   pod 'SwiftyJSON', '5.0.0'
   pod 'SnapKit', '5.0.1'
-  
+  pod 'GRDB.swift', '4.5.0'
+   
   target 'PMGTests' do
     inherit! :search_paths
     # Pods for testing

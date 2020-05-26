@@ -24,11 +24,25 @@ class MovieDataManager {
         apiRepository = repository
     }
     
-    func getMovies() -> Observable<[Movie]> {
+    func getMovies(from onlineOnly: Bool = false) -> Observable<[Movie]> {
+        // Get data from local database (cache) first
+        if !onlineOnly {
+            if let movies = DatabaseRepository.getMovies(), !movies.isEmpty {
+                return Observable.just(movies)
+            }
+        }
+        // Data not in cache, get new one (and put in cache)
         return apiRepository.getMovieList()
     }
     
     func getMovieCharacter(from url: String) -> Observable<MovieCharacter> {
+        
+        if let character = DatabaseRepository.getMovieCharacter(with: url) {
+            if character.valid {
+                return Observable.just(character)
+            }
+        }
+       
         return apiRepository.getCharacter(from: url)
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class MovieCharacter {
+final class MovieCharacter {
     var name = ""
     var birthYear = ""
     var eyeColor = ""
@@ -33,5 +33,9 @@ class MovieCharacter {
         self.gender = json["gender"].stringValue
         self.skinColor = json["skin_color"].stringValue
         self.url = json["url"].stringValue
+    }
+    
+    var valid: Bool {
+        return !name.isEmpty
     }
 }

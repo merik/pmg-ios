@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class Movie: Comparable {
+final class Movie: Comparable {
     static func < (lhs: Movie, rhs: Movie) -> Bool {
         guard let lhsDate = lhs.movieDate else {
             return true
@@ -42,6 +42,10 @@ class Movie: Comparable {
     var openingCrawl = ""
     var releaseDate = ""
     var characters: [MovieCharacter] = []
+    
+    init() {
+        
+    }
     
     init?(json: JSON) {
         guard let id = json["episode_id"].int else {

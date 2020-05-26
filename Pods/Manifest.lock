@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.0.5)
+  - GRDB.swift (4.5.0):
+    - GRDB.swift/standard (= 4.5.0)
+  - GRDB.swift/standard (4.5.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -14,6 +17,7 @@ PODS:
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
+  - GRDB.swift (= 4.5.0)
   - Moya (= 14.0.0)
   - RxCocoa (= 5.0.0)
   - RxSwift (= 5.0.0)
@@ -23,6 +27,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GRDB.swift
     - Moya
     - RxCocoa
     - RxRelay
@@ -32,6 +37,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  GRDB.swift: f9c4cabfb4d1266685e80b1f6ea433eb61c7950c
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -39,6 +45,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: f1352f8e72610eb0b52b5c736e643c11ea32b32e
+PODFILE CHECKSUM: 77a3fd01f40f2f3855141ef9c9e4c3bc1467c22e
 
 COCOAPODS: 1.9.1

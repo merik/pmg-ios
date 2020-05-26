@@ -22,20 +22,25 @@ class DashboardViewModel {
         output = Output()
     }
     
-    func refresh() {
+    func getMovies() {
         output.isLoading.accept(true)
         refreshMovies()
     }
     
-    private func refreshMovies() {
-        MovieDataManager.shared.getMovies().asObservable()
+    func refresh() {
+        output.isLoading.accept(true)
+        refreshMovies(onlineOnly: true)
+    }
+    
+    private func refreshMovies(onlineOnly: Bool = false) {
+        MovieDataManager.shared.getMovies(from: onlineOnly).asObservable()
             .observeOn(MovieDataManager.networkQueue)
             .subscribe(onNext: {[weak self] movies in
                 self?.output.isLoading.accept(false)
                 self?.output.movies.accept(movies)
             }, onError: {[weak self] error in
                     self?.output.isLoading.accept(false)
-                    // ignore error handling for now
+                    // TODO: properly handle error
             }).disposed(by: disposeBag)
     }
     

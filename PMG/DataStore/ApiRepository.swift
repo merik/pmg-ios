@@ -59,7 +59,7 @@ class ApiRepository: BaseRepository {
                 case .success(let response):
                     do {
                         let data = response.data
-                        let json = try JSON(data: data) // convert network data to json
+                        let json = try JSON(data: data)
                         if self.isHttpSuccess(code: response.statusCode) {
                             var movies = [Movie]()
                             if let movieArray = json["results"].array {
@@ -70,6 +70,7 @@ class ApiRepository: BaseRepository {
                                 }
                             }
                             movies.sort(by: >)
+                            DatabaseRepository.saveMovies(movies)
                             observer.onNext(movies)
                             observer.onCompleted()
                             
@@ -81,6 +82,8 @@ class ApiRepository: BaseRepository {
                         observer.onError(ApiError.genericError)
                     }
                 case .failure(let error):
+                    // TODO: properly handle error
+                    print(error)
                     observer.onError(ApiError.genericError)
                 }
             })
@@ -100,6 +103,8 @@ class ApiRepository: BaseRepository {
                         let json = try JSON(data: data) // convert network data to json
                         if self.isHttpSuccess(code: response.statusCode) {
                             let character = MovieCharacter(json: json)
+                            // save to local database (cache)
+                            DatabaseRepository.saveMovieCharacter(character)
                             observer.onNext(character)
                             observer.onCompleted()
                             
@@ -111,6 +116,7 @@ class ApiRepository: BaseRepository {
                         observer.onError(ApiError.genericError)
                     }
                 case .failure(let error):
+                    // TODO: proper handling error
                     print(error)
                     observer.onError(ApiError.genericError)
                 }

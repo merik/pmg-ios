@@ -70,7 +70,7 @@ class DashboardViewController: UIViewController {
         let refresher = UIRefreshControl()
         refresher.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.refreshControl = refresher
-        refresh()
+        viewModel.getMovies()
     }
     
     @objc func refresh() {
